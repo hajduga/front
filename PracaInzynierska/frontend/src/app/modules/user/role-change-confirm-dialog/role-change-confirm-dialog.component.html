@@ -1,0 +1,16 @@
+<div>
+  <form [formGroup]="parentForm" fxLayout="column"  class="roleChangeForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Imię</mat-label>
+      <input matInput formControlName="firstName" placeholder="Podaj swoje imię">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nazwisko</mat-label>
+      <input matInput formControlName="lastName" placeholder="Podaj swoje nazwisko">
+    </mat-form-field>
+    <div fxLayout="row">
+      <button fxFlex mat-raised-button [mat-dialog-close]="false" class="cancelButton mat-raised-button">Anuluj</button>
+      <button fxFlex mat-raised-button color="primary" [mat-dialog-close]="true" class="mat-raised-button">Potwierdź</button>
+    </div>
+  </form>
+</div>

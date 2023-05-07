@@ -1,0 +1,23 @@
+<header fxLayoutAlign="start center">
+
+  <div fxFlex fxLayoutAlign="start end" fxLayoutGap="30">
+    <mat-icon class="logoIcon">waves</mat-icon>
+    <span class="logo">{{title}}</span>
+  </div>
+  <div fxLayoutGap="20" fxLayoutAlign="start center">
+    <button mat-button routerLink="" class="button">Strona główna</button>
+    <button mat-button routerLink="/articles" class="button">Artykuły</button>
+    <button mat-button routerLink="/specialists" class="button">Specjaliści</button>
+    <span></span>
+    <div fxLayout="column">
+      <div>
+        <button *ngIf="!isLoggedIn()" mat-raised-button routerLink="/login" class="loginButton">Zaloguj</button>
+        <button *ngIf="isLoggedIn()" mat-raised-button (click)="logout()" class="loginButton">Wyloguj</button>
+      </div>
+      <div>
+        <button *ngIf="isLoggedIn()" mat-raised-button routerLink="/profile" color="accent" class="profileButton">Moje konto</button>
+      </div>
+    </div>
+  </div>
+
+</header>

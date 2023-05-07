@@ -1,0 +1,17 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.userDetails {
+  padding: 20px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: #0988af;
+}

@@ -1,0 +1,21 @@
+    <mat-list>
+        <div fxFlex class="sidebar" fxLayoutAlign="start center">
+            <mat-list-item>
+                <button mat-raised-button routerLink="/admin/users" class="button">Użytkownicy</button>
+            </mat-list-item>
+        </div>
+    </mat-list>
+    <mat-list>
+        <div fxFlex class="sidebar" fxLayoutAlign="start center">
+            <mat-list-item>
+                <button mat-raised-button routerLink="/admin/requests" class="button">Prośby</button>
+            </mat-list-item>
+        </div>
+    </mat-list>
+    <mat-list>
+      <div fxFlex class="sidebar" fxLayoutAlign="start center">
+        <mat-list-item>
+          <button mat-raised-button color="accent" (click)="logout()" class="button">Wyloguj</button>
+        </mat-list-item>
+      </div>
+    </mat-list>

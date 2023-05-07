@@ -1,0 +1,22 @@
+:host {
+  padding: 20px;
+  height: 100%;
+  position: relative;
+}
+
+.userDetails {
+  width: 100%;
+  margin-left: 30px;
+}
+
+.deleteButton {
+  float: right;
+  width: 150px;
+  height: 100%;
+  padding: 30px;
+}
+
+.username {
+  font-size: 28px;
+  margin-top: 25px;
+}

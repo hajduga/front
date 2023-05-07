@@ -1,0 +1,20 @@
+<h1>Twoje dane</h1>
+<div>
+  <div fxLayout="row">
+    <h2>{{user?.username}}</h2>
+    <div class="userDetails">
+    </div>
+  </div>
+  <div class="deleteButton">
+    <button mat-flat-button color="accent" (click)="confirmDelete(user)">Usuń konto</button>
+  </div>
+  <div class="changeButton">
+    <button *ngIf="isUser()" mat-flat-button color="primary" (click)="openDialog(roleChangeForm)">Uzyskaj dostęp do
+      konta specjalisty
+    </button>
+    <button *ngIf="isRequestedSpecialist()" mat-flat-button>Twoja prośba o uzyskanie statusu specjalisty oczekuje na
+      potwierdzenie
+    </button>
+    <button *ngIf="isSpecialist()" color="warn" routerLink="{{'/my-articles'}}" mat-flat-button>Moje artykuły</button>
+  </div>
+</div>

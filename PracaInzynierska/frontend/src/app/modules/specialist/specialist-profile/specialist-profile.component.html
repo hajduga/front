@@ -1,0 +1,16 @@
+<h1>Twoje dane</h1>
+<div>
+  <div fxLayout="row">
+    <!--      <img *ngIf="!user?.image" src="/assets/image-placeholder.png" width="250">-->
+    <!--      <img *ngIf="user?.image" src="{{'/api/data/articleImage/' + user?.image}}" width="250">-->
+    <h2>{{user?.username}}</h2>
+    <div class="userDetails">
+    </div>
+  </div>
+  <div class="deleteButton">
+    <button mat-flat-button color="accent" (click)="confirmDelete(user)">Usuń konto</button>
+  </div>
+</div>
+<div>
+  <app-article></app-article>
+</div>

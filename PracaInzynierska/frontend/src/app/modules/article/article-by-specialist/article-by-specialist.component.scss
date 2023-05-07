@@ -1,0 +1,29 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.articleImage{
+  margin-right: 25px;
+}
+.articleContent{
+  font-size: 20px;
+  color: white;
+}
+.articleTitle{
+  font-size: 28px;
+  margin-top: 25px;
+}
+.marginLeft{
+  margin-left: 25px;
+}
+mat-card{
+  margin-bottom: 30px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: #0988af;
+}

@@ -1,0 +1,12 @@
+<h1>Dodaj artykuł</h1>
+<form fxLayout="column" [formGroup]="articleForm" (submit)="submit()">
+    <app-specialist-article-form [parentForm]="articleForm"></app-specialist-article-form>
+</form>
+
+<img *ngIf="image" src="{{'/api/data/articleImages/' + image}}" width="200">
+<div class="upload">
+  <form [formGroup]="imageForm" (submit)="uploadFile()">
+    <input type="file" [accept]="requiredFileTypes" (change)="onFileChange($event)">
+    <button mat-flat-button color="accent">Upload</button>
+  </form>
+</div>

@@ -1,0 +1,10 @@
+<div>
+  <div fxLayout="row">
+    <img *ngIf="!user?.image" src="/assets/image-placeholder.png" width="250">
+    <img *ngIf="user?.image" src="{{'/api/data/articleImage/' + user?.image}}" width="250">
+    <div fxLayout="column" class="userDetails">
+      <h1>{{user?.firstName}} {{user?.lastName}}</h1>
+      <button mat-flat-button color="accent"><a routerLink="{{'/specialists/' + user?.id + '/articles'}}">Zobacz artykuły</a></button>
+    </div>
+  </div>
+</div>

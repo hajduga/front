@@ -1,0 +1,52 @@
+<div fxLayout="column">
+  <div fxLayout="row" fxFlex fxLayoutGap="20">
+    <div class="content">
+      <img *ngIf="!article?.image" src="/assets/image-placeholder.png" width="350">
+      <img *ngIf="article?.image" src="{{'/api/data/articleImages/' + article?.image}}" width="350">
+    </div>
+    <div fxLayout="column" fxFlex class="content">
+      <h1>{{article?.title}}</h1>
+      <h2 class="marginLeft">{{article?.specialistName}}</h2>
+      <div class="shortDescription">
+        {{article?.shortDescription}}
+      </div>
+      <div class="description">
+        {{article?.description}}
+      </div>
+    </div>
+  </div>
+  <div class="comments">
+    <h2>Komentarze</h2>
+
+    <div>
+      <div *ngFor="let comment of article?.comments" class="showComments">
+        <div class="author">{{comment.authorName}}</div>
+        <div>{{comment.content}}</div>
+      </div>
+    </div>
+
+    <form [formGroup]="commentForm" (submit)="submit()" fxLayout="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Autor</mat-label>
+        <input matInput placeholder="Podaj swoje imię" formControlName="authorName">
+        <div *ngIf="authorName?.invalid && (authorName?.dirty || authorName?.touched)" class="errorMessage">
+          <div *ngIf="authorName?.errors?.['required']">
+            Imię jest wymagane
+          </div>
+        </div>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Twój komentarz</mat-label>
+        <textarea matInput rows="5" placeholder="Twoj komentarz" formControlName="content"></textarea>
+        <div *ngIf="content?.invalid && (content?.dirty || content?.touched)" class="errorMessage">
+          <div *ngIf="content?.errors?.['required']">
+            Komentarz jest wymagany
+          </div>
+        </div>
+      </mat-form-field>
+      <div fxLayout="colum" fxFlexAlign="end" fxLayoutGap="10">
+        <button mat-flat-button color="primary" [disabled]="!commentForm.valid">Zapisz</button>
+      </div>
+    </form>
+  </div>
+</div>

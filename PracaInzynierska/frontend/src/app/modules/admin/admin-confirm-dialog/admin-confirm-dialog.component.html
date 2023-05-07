@@ -1,0 +1,12 @@
+<div fxLayout="column" fxLayoutGap="10px" style="overflow-y:hidden">
+  <div fxLayout="row">
+    <span fxFlex class="mainText">{{data.message}}</span>
+    <button mat-mini-fab class="closeButton" [mat-dialog-close]="false">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div fxLayout="row">
+    <button fxFlex mat-raised-button [mat-dialog-close]="false" class="cancelButton mat-raised-button">Anuluj</button>
+    <button fxFlex mat-raised-button color="primary" [mat-dialog-close]="true" class="mat-raised-button">Potwierdź</button>
+  </div>
+</div>
